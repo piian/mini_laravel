@@ -11,6 +11,12 @@ $app = new \Illuminate\Container\Container;
 // 注册路由服务提供者
 (new \Illuminate\Routing\RoutingServiceProvider($app))->register();
 
+
+// 启动Eloquent ORM模块并进行相关配置
+$manager = new \Illuminate\Database\Capsule\Manager();
+$manager->addConnection(require '../config/database.php'); // 增加连接
+$manager->bootEloquent();
+
 // 加载路由
 require __DIR__ . '/../app/Http/routes.php';
 
