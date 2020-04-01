@@ -1,5 +1,6 @@
 {
     "require": {
-
+        "illuminate/routing": "*",
+        "illuminate/events": "*"
     }
 }
